@@ -48,7 +48,7 @@ public class nodeEditor : Editor
 		for (int i = 0; i < _target.nodes.Count; i++) {
 			_target.nodes[i] = EditorGUILayout.Vector3Field("Node " + (i+1), _target.nodes[i]);
 		}
-		
+
 		//update and redraw:
 		if(GUI.changed){
 			EditorUtility.SetDirty(_target);			
@@ -62,13 +62,14 @@ public class nodeEditor : Editor
 			Undo.SetSnapshotTarget(_target,"Adjust iTween Path");
 			
 			//path begin and end labels:
-//			Handles.Label(_target.nodes[0], "'" + _target.pathName + "' Begin", style);
-//			Handles.Label(_target.nodes[_target.nodes.Count-1], "'" + _target.pathName + "' End", style);
+			Handles.Label(_target.nodes[0], "Path_Begin", style);
+			Handles.Label(_target.nodes[_target.nodes.Count-1], "Path_End", style);
 			
 			//node handle display:
 			for (int i = 0; i < _target.nodes.Count; i++) {
 				_target.nodes[i] = Handles.PositionHandle(_target.nodes[i], Quaternion.identity);
 			}	
+	
 		}	
 	}
 }

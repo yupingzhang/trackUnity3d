@@ -9,10 +9,16 @@ public class NodeObj : MonoBehaviour {
 	public int left = 0;
 	public int right = 0;
 
-	// Use this for initialization
-	void Start () {
+	public NodeObj(bool br, int l, int r) {
+		branch = br;
+		left = l;
+		right = r;
 	}
-	
+
+	// Use this for initialization
+//	void Start () {
+//	}
+//	
 	// Update is called once per frame
 //	void Update () {
 //	

@@ -17,11 +17,11 @@ public class photRating : MonoBehaviour {
 
 	void TweenIt (bool Forward) {
 		if (Forward) {
-			StarFull.GetComponent<TweenScale> ().ResetToBeginning ();
-			StarFull.GetComponent<TweenRotation> ().ResetToBeginning ();
+			if (StarFull) StarFull.GetComponent<TweenScale> ().ResetToBeginning ();
+			if (StarFull) StarFull.GetComponent<TweenRotation> ().ResetToBeginning ();
 		} else {
-			StarFull.GetComponent<TweenScale> ().PlayReverse ();
-			StarFull.GetComponent<TweenRotation> ().PlayReverse ();
+			if (StarFull) StarFull.GetComponent<TweenScale> ().PlayReverse ();
+			if (StarFull) StarFull.GetComponent<TweenRotation> ().PlayReverse ();
 		}
 		for (int z = 0; z < content.Count; z++) {
 			if (Forward) {
@@ -31,8 +31,8 @@ public class photRating : MonoBehaviour {
 		}
 	}
 
-	public void TweenInWSuccess () {
-		StarFull.GetComponent<TweenScale> ().PlayForward ();
-		StarFull.GetComponent<TweenRotation> ().PlayForward ();
+	public void TweenInSuccess () {
+		if (StarFull) StarFull.GetComponent<TweenScale> ().PlayForward ();
+		if (StarFull) StarFull.GetComponent<TweenRotation> ().PlayForward ();
 	}
 }

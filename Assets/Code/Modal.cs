@@ -4,7 +4,24 @@ using System.Collections.Generic;
 
 public class Modal : MonoBehaviour {
 
+	public GameManager theManager;
+
 	public List<GameObject> content = new List<GameObject>(); 
+
+	public UITexture resultPhoto;
+
+	public photRating distanceRating;
+	public photRating rotationRating;
+	public photRating animationRating;
+	public photRating selfieRating;
+
+	public TweenAdvancedAnchors btnNext;
+	public TweenAdvancedAnchors btnPrevious;
+
+	public TweenAdvancedAnchors title;
+	public TweenPosition NoPhotos;
+	public TweenAdvancedAnchors goToMenu;
+	public TweenAdvancedAnchors restart;
 
 	void Start () {
 		//gameObject.GetComponent<UISprite>().enabled = true;
@@ -20,6 +37,7 @@ public class Modal : MonoBehaviour {
 	public void openResults () {
 		turnOffContent();
 		content[1].SetActive(true);
+		title.PlayForward ();
 		toggleBody(true);
 	}
 

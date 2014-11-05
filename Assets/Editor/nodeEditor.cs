@@ -62,8 +62,11 @@ public class nodeEditor : Editor
 			Undo.SetSnapshotTarget(_target,"Adjust iTween Path");
 			
 			//path begin and end labels:
-			Handles.Label(_target.nodes[0], "Path_Begin", style);
-			Handles.Label(_target.nodes[_target.nodes.Count-1], "Path_End", style);
+//			Handles.Label(_target.nodes[0], "Path_Begin", style);
+//			Handles.Label(_target.nodes[_target.nodes.Count-1], "Path_End", style);
+			for(int i=0; i<_target.nodes.Count; i++) {
+				Handles.Label(_target.nodes[i], "No." + i.ToString(), style);
+			}
 			
 			//node handle display:
 			for (int i = 0; i < _target.nodes.Count; i++) {

@@ -7,14 +7,21 @@ public class Player : MonoBehaviour {
 
 	public OpenDiveSensor drive;
 	public GameObject firstPersoneCam;
+	public GameObject firstPersoneCamCam;
 	public Camera firstPersoneCamLeft;
 	public Camera firstPersoneCamRight;
 
 	public GameObject selfiePersoneCam;
+	public GameObject selfiePersoneCamCam;
 	public Camera selfiePersoneCamLeft;
 	public Camera selfiePersoneCamRight;
 
-	public SplineController theSpline;
+	public TweenScale selfieSprite;
+	public TweenScale selfieLabel;
+
+	public GameObject model;
+
+	//public SplineController theSpline;
 
 	public UILabel compassInfo;
 	public UILabel gyroscopeInfo;
@@ -25,7 +32,7 @@ public class Player : MonoBehaviour {
 	public bool canSnap = true;
 	public float lastMag;
 	public float downTime = 0.0f;
-	bool selfieMode = false;
+	public bool selfieMode = false;
 
 	public ButtonHold btnHold;
 
@@ -67,6 +74,8 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update () {
+
+		if (Input.GetKeyDown (KeyCode.Space)) theManager.SendMessage ("gameOver");
 
 		if (canSnap) {
 #if UNITY_EDITOR
@@ -110,21 +119,44 @@ public class Player : MonoBehaviour {
 	}
 
 	void enableSelfieMode () {
+
+		model.SetActive (true);
+
 		firstPersoneCam.SetActive (false);
 		selfiePersoneCam.SetActive (true);
 
 		drive.cameraleft = selfiePersoneCamLeft;
 		drive.cameraleft = selfiePersoneCamRight;
 
+		selfieSprite.ResetToBeginning ();
+		selfieSprite.PlayForward ();
+
+		selfieLabel.ResetToBeginning ();
+		selfieLabel.PlayForward ();
+
+		if (!IsInvoking ("tweenBackSelfies")) Invoke ("tweenBackSelfies", 1);
+
 		selfieMode = true;
 	}
 
+	void tweenBackSelfies () {
+		selfieSprite.PlayReverse ();
+
+		selfieLabel.PlayReverse ();
+		CancelInvoke ("tweenBackSelfies");
+	}
+
 	void disableSelfieMode () {
+
 		firstPersoneCam.SetActive (true);
 		selfiePersoneCam.SetActive (false);
 
+		model.SetActive (false);
+
 		drive.cameraleft = firstPersoneCamLeft;
 		drive.cameraleft = firstPersoneCamRight;
+
+		tweenBackSelfies ();
 
 		selfieMode = false;
 	}
@@ -134,7 +166,7 @@ public class Player : MonoBehaviour {
 			// play bad sound and shake screen
 			return;
 		}
-		if (selfieMode) Invoke ("disableSelfieMode", 0.5f);
+		if (selfieMode) Invoke ("disableSelfieMode", 0.75f);
 		btnHold.enabled = false;
 		//print ("downTime = " + downTime + " | selfieMode = " + selfieMode);
 		downTime = 0.0f;

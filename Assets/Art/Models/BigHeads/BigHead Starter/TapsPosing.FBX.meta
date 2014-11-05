@@ -1,0 +1,163 @@
+fileFormatVersion: 2
+guid: c8d4f32e009fa6c4abd282f8b4639cdc
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: BigHead_base
+    100002: BigHeads
+    100004: BigHeads floor
+    100006: BigHeads Footsteps
+    100008: BigHeads Head
+    100010: BigHeads HeadNub
+    100012: BigHeads L Calf
+    100014: BigHeads L Clavicle
+    100016: BigHeads L Finger0
+    100018: BigHeads L Finger01
+    100020: BigHeads L Finger0Nub
+    100022: BigHeads L Finger1
+    100024: BigHeads L Finger11
+    100026: BigHeads L Finger1Nub
+    100028: BigHeads L Finger2
+    100030: BigHeads L Finger21
+    100032: BigHeads L Finger2Nub
+    100034: BigHeads L Foot
+    100036: BigHeads L Forearm
+    100038: BigHeads L Hand
+    100040: BigHeads L Thigh
+    100042: BigHeads L Toe0
+    100044: BigHeads L Toe0Nub
+    100046: BigHeads L UpperArm
+    100048: BigHeads Neck
+    100050: BigHeads Pelvis
+    100052: BigHeads R Calf
+    100054: BigHeads R Clavicle
+    100056: BigHeads R Finger0
+    100058: BigHeads R Finger01
+    100060: BigHeads R Finger0Nub
+    100062: BigHeads R Finger1
+    100064: BigHeads R Finger11
+    100066: BigHeads R Finger1Nub
+    100068: BigHeads R Finger2
+    100070: BigHeads R Finger21
+    100072: BigHeads R Finger2Nub
+    100074: BigHeads R Foot
+    100076: BigHeads R Forearm
+    100078: BigHeads R Hand
+    100080: BigHeads R Thigh
+    100082: BigHeads R Toe0
+    100084: BigHeads R Toe0Nub
+    100086: BigHeads R UpperArm
+    100088: BigHeads Spine
+    100090: BigHeads Spine1
+    100092: Camera002
+    100094: sombrero
+    100096: //RootNode
+    400000: BigHead_base
+    400002: BigHeads
+    400004: BigHeads floor
+    400006: BigHeads Footsteps
+    400008: BigHeads Head
+    400010: BigHeads HeadNub
+    400012: BigHeads L Calf
+    400014: BigHeads L Clavicle
+    400016: BigHeads L Finger0
+    400018: BigHeads L Finger01
+    400020: BigHeads L Finger0Nub
+    400022: BigHeads L Finger1
+    400024: BigHeads L Finger11
+    400026: BigHeads L Finger1Nub
+    400028: BigHeads L Finger2
+    400030: BigHeads L Finger21
+    400032: BigHeads L Finger2Nub
+    400034: BigHeads L Foot
+    400036: BigHeads L Forearm
+    400038: BigHeads L Hand
+    400040: BigHeads L Thigh
+    400042: BigHeads L Toe0
+    400044: BigHeads L Toe0Nub
+    400046: BigHeads L UpperArm
+    400048: BigHeads Neck
+    400050: BigHeads Pelvis
+    400052: BigHeads R Calf
+    400054: BigHeads R Clavicle
+    400056: BigHeads R Finger0
+    400058: BigHeads R Finger01
+    400060: BigHeads R Finger0Nub
+    400062: BigHeads R Finger1
+    400064: BigHeads R Finger11
+    400066: BigHeads R Finger1Nub
+    400068: BigHeads R Finger2
+    400070: BigHeads R Finger21
+    400072: BigHeads R Finger2Nub
+    400074: BigHeads R Foot
+    400076: BigHeads R Forearm
+    400078: BigHeads R Hand
+    400080: BigHeads R Thigh
+    400082: BigHeads R Toe0
+    400084: BigHeads R Toe0Nub
+    400086: BigHeads R UpperArm
+    400088: BigHeads Spine
+    400090: BigHeads Spine1
+    400092: Camera002
+    400094: sombrero
+    400096: //RootNode
+    4300000: BigHead_base
+    4300002: sombrero
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: BigHead_base
+    13700002: sombrero
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

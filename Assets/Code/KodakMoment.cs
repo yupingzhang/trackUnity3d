@@ -5,11 +5,11 @@ public class KodakMoment : MonoBehaviour {
 
 	public GameManager theManager;
 
+	public int snapped = -1;
 	public float distance;
 	public Vector3 rotation;
 	public bool isDoingSpecial = false;
-	public int points;
-
+	bool caughtBeingSpecial = false;
 
 	void OnBecameVisible() {
 		theManager.kodakMoments.Add (this);
@@ -26,24 +26,35 @@ public class KodakMoment : MonoBehaviour {
 		}
 	}
 
-	public void checkDistance () {
-		if (distance == -1) return;
+	public bool checkDistance () {
+		print ("Distance is " + Vector3.Distance (theManager.thePlayer.transform.position, transform.position));
+		if (distance == -1) return true;
 
-		if (Vector3.Distance (theManager.thePlayer.transform.position, transform.position) > distance) {
-			return;
-		} else points += 1;
-
-		distance = -1;
+		if (Vector3.Distance (theManager.thePlayer.transform.position, transform.position) < distance) {
+			distance = -1;
+			return true;
+		} else return false;
 	}
 
-	public void checkRotation () {
-		if (rotation == new Vector3 (-1, -1, -1)) return;
+	public bool checkRotation () {
+		print ("Rotation distance is " + Vector3.Distance (transform.localEulerAngles, rotation));
+		if (rotation == -Vector3.one) return true;
 
+		if (Vector3.Distance (transform.localEulerAngles, rotation) < 1) {
+			rotation = -Vector3.one;
+			return true;
+		} else return false;
+	}
 
+	public bool checkisDoingSpecial () {
+		print ("Being Special is " + isDoingSpecial);
+		if (caughtBeingSpecial) return true;
+
+		if (isDoingSpecial) {
+			caughtBeingSpecial = true;
+			return true;
+		} else return false;
 
 	}
 
-	public void checkisDoingSpecial () {
-
-	}
 }
